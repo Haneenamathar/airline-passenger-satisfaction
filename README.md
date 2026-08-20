@@ -739,3 +739,43 @@ The following resources supported the development of this project:
 This project was developed as part of the **Code Institute Data Analytics and AI Bootcamp** assessment.
 
 All analysis, interpretation, machine-learning evaluation and dashboard development were completed as part of the project workflow documented in this repository.
+
+---
+
+# Reflection
+
+This project provided an opportunity to apply the complete data analytics workflow to a real-world dataset, from data collection and cleaning through exploratory analysis, statistical testing, machine learning and interactive visualisation.
+
+One of the main learning experiences was understanding how different analytical techniques support different stages of a project. Exploratory analysis helped identify patterns in passenger satisfaction, while statistical testing was used to determine whether an observed relationship was statistically significant. Machine learning then demonstrated how the available features could be used for prediction.
+
+Several technical challenges were encountered during development. Logistic Regression initially failed to converge within the specified number of iterations. Standardising the numerical features within the preprocessing pipeline resolved this issue and reinforced the importance of appropriate preprocessing when applying machine-learning algorithms.
+
+Developing the Streamlit dashboard also required adapting the analysis for an interactive audience. Issues involving file paths, widget state, filtering logic and indentation were identified through testing and corrected. Adding interactive filters demonstrated how analytical results can be transformed from static notebook outputs into a tool that stakeholders can explore themselves.
+
+The project also reinforced the importance of reproducibility. Notebooks were validated using a fresh kernel and Run All before being committed, while the Streamlit application was tested locally and checked for Python syntax errors.
+
+Overall, the project strengthened my understanding of how data cleaning, statistics, visualisation, machine learning, business requirements and interactive reporting work together within an end-to-end analytics project. These skills provide a foundation for adapting to new datasets, analytical methods and tools in future data analytics work.
+
+
+---
+
+# Dashboard Design and User Experience
+
+The Streamlit dashboard was designed to present the main analytical findings in a clear and accessible format for non-technical stakeholders.
+
+The dashboard uses a structured information hierarchy, beginning with high-level KPI metrics before progressing to satisfaction patterns, service insights, machine-learning performance and business recommendations.
+
+Interactive sidebar filters allow users to explore the data by:
+
+* Type of Travel
+* Travel Class
+* Customer Type
+* Gender
+
+A **Reset Filters** button allows users to quickly return the dashboard to its default view.
+
+Relevant KPI metrics and analytical charts update dynamically when filters are selected, giving users control over the information displayed.
+
+Machine-learning performance and feature-importance results remain fixed because these values represent the evaluation of the final models on the original test dataset and were not recalculated for individual dashboard filter selections.
+
+Clear headings, descriptive chart titles and consistent dashboard sections were used to make the application easier to navigate and interpret.
