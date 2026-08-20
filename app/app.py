@@ -16,6 +16,71 @@ def load_data():
 
 df = load_data()
 
+
+def reset_filters():
+    st.session_state["travel_filter"] = "All"
+    st.session_state["class_filter"] = "All"
+    st.session_state["customer_filter"] = "All"
+    st.session_state["gender_filter"] = "All"
+
+
+st.sidebar.header("Dashboard Filters")
+
+travel_filter = st.sidebar.selectbox(
+    "Type of Travel",
+    ["All"] + sorted(df["Type of Travel"].unique().tolist()),
+    key="travel_filter"
+)
+
+class_filter = st.sidebar.selectbox(
+    "Travel Class",
+    ["All"] + sorted(df["Class"].unique().tolist()),
+    key="class_filter"
+)
+
+customer_filter = st.sidebar.selectbox(
+    "Customer Type",
+    ["All"] + sorted(df["Customer Type"].unique().tolist()),
+    key="customer_filter"
+)
+
+gender_filter = st.sidebar.selectbox(
+    "Gender",
+    ["All"] + sorted(df["Gender"].unique().tolist()),
+    key="gender_filter"
+)
+
+
+
+st.sidebar.button(
+    "Reset Filters",
+    on_click=reset_filters
+)
+
+filtered_df = df.copy()
+
+if travel_filter != "All":
+    filtered_df = filtered_df[
+        filtered_df["Type of Travel"] == travel_filter
+    ]
+
+if class_filter != "All":
+    filtered_df = filtered_df[
+        filtered_df["Class"] == class_filter
+    ]
+
+if customer_filter != "All":
+    filtered_df = filtered_df[
+        filtered_df["Customer Type"] == customer_filter
+    ]
+
+if gender_filter != "All":
+    filtered_df = filtered_df[
+        filtered_df["Gender"] == gender_filter
+    ]
+
+
+
 st.title("Airline Passenger Satisfaction Analysis 2026")
 
 st.write(
@@ -26,12 +91,17 @@ st.write(
 
 st.subheader("Key Metrics")
 
-total_passengers = len(df)
+total_passengers = len(filtered_df)
+
 satisfied_percentage = (
-    (df["satisfaction"] == "satisfied").mean() * 100
+    (filtered_df["satisfaction"] == "satisfied").mean() * 100
 )
-average_age = df["Age"].mean()
-average_flight_distance = df["Flight Distance"].mean()
+
+average_age = filtered_df["Age"].mean()
+
+average_flight_distance = filtered_df[
+    "Flight Distance"
+].mean()
 
 col1, col2, col3, col4 = st.columns(4)
 
@@ -58,7 +128,7 @@ col4.metric(
 st.subheader("Passenger Satisfaction")
 
 satisfaction_counts = (
-    df["satisfaction"]
+    filtered_df["satisfaction"]
     .value_counts()
     .rename_axis("Satisfaction")
     .reset_index(name="Count")
@@ -73,8 +143,8 @@ st.bar_chart(
 st.subheader("Satisfaction by Type of Travel")
 
 travel_satisfaction = pd.crosstab(
-    df["Type of Travel"],
-    df["satisfaction"],
+    filtered_df["Type of Travel"],
+    filtered_df["satisfaction"],
     normalize="index"
 ) * 100
 
@@ -100,7 +170,7 @@ service_columns = [
 ]
 
 service_means = (
-    df.groupby("satisfaction")[service_columns]
+    filtered_df.groupby("satisfaction")[service_columns]
     .mean()
     .T
 )
