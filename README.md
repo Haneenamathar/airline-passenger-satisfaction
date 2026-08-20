@@ -69,6 +69,8 @@ The analysis examined:
 The analysis found that approximately **43.3% of passengers were satisfied**, while approximately **56.7% were neutral or dissatisfied**.
 
 This established the overall satisfaction profile of the dataset and showed that fewer than half of the passengers were classified as satisfied.
+
+
 ---
 
 
@@ -163,6 +165,8 @@ This difference between the mean and median indicates that most passengers exper
 Passengers with longer delays generally showed lower satisfaction, although delay was only one of several factors associated with the overall passenger experience.
 
 The results suggest that reducing severe delays may contribute to improved passenger experience, but service quality and travel characteristics also play important roles in satisfaction.
+
+
 ---
 
 ## BR5 — Predict Passenger Satisfaction
@@ -337,6 +341,8 @@ The dashboard presents:
 ### 8. Conclusions and Business Recommendations
 
 Findings from the exploratory analysis, statistical testing and machine-learning analysis were combined to identify practical areas that airlines could prioritise when seeking to improve passenger satisfaction.
+
+
 ---
 
 # Dataset
