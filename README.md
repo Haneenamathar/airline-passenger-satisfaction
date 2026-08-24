@@ -20,7 +20,7 @@ An interactive Streamlit dashboard was also developed to communicate the main an
 ## Project Links
 
 * **GitHub Repository:** [Airline Passenger Satisfaction](https://github.com/Haneenamathar/airline-passenger-satisfaction)
-* **Live Dashboard:** To be added after deployment
+* **Live Dashboard:** https://airline-satisfaction-2026-815befa26a7c.herokuapp.com/
 
 ---
 
