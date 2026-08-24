@@ -204,11 +204,24 @@ model_results = pd.DataFrame({
     ]
 })
 
-st.bar_chart(
+import plotly.express as px
+
+fig = px.bar(
     model_results,
     x="Model",
-    y="Accuracy (%)"
+    y="Accuracy (%)",
+    text="Accuracy (%)",
+    range_y=[0, 100]
 )
+
+fig.update_traces(texttemplate="%{text:.2f}%", textposition="outside")
+
+fig.update_layout(
+    yaxis_title="Accuracy (%)",
+    xaxis_title="Model"
+)
+
+st.plotly_chart(fig, use_container_width=True)
 
 st.success(
     "Random Forest was selected as the final model, achieving "
