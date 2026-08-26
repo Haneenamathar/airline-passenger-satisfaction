@@ -742,9 +742,18 @@ The following resources supported the development of this project:
 
 ## Acknowledgements
 
-This project was developed as part of the **Code Institute Data Analytics and AI Bootcamp** assessment.
+I would like to sincerely thank Code Institute for providing the learning environment, resources and guidance that supported me throughout this Data Analytics and AI Bootcamp project.
 
-All analysis, interpretation, machine-learning evaluation and dashboard development were completed as part of the project workflow documented in this repository.
+A special thanks to Mr. Vasi for his guidance, support and encouragement throughout the course. His explanations and feedback helped me develop my understanding of data analytics, statistics, machine learning and the practical application of these skills.
+
+I would also like to thank my fellow students for their collaboration, discussions, encouragement and willingness to share ideas and learning experiences throughout the bootcamp.
+
+I am grateful to the wider technology and open-source community whose tools, libraries, documentation and learning resources made this project possible. In particular, I would like to acknowledge Python, Pandas, NumPy, Matplotlib, Seaborn, SciPy, Scikit-learn, XGBoost, Streamlit, Plotly, Git, GitHub and Heroku for providing the technologies used to develop, analyse, visualise and deploy this project.
+
+I would also like to acknowledge OpenAI and its AI tools for providing assistance during the development process. AI support was used as a learning and development aid for areas such as troubleshooting, understanding technical concepts, refining approaches, debugging and improving the project workflow. All analysis, interpretation, model evaluation, business recommendations and final project decisions were reviewed and validated as part of my own project work.
+
+Finally, I would like to thank everyone involved in creating and maintaining the learning materials, documentation and resources that helped me complete this project and develop my confidence in applying data analytics and AI techniques to a real-world business problem.
+
 
 ---
 
